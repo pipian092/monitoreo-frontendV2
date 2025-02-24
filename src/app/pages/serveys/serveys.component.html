@@ -1,0 +1,52 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ficha de Monitoreo de Organizaciones Locales</h4>
+                        <p class="category"></p>
+                    </div>
+                    <div class="content">
+                        <div class="content">
+                            <a routerLink="/new-monitoring" class="btn btn-success btn-fill btn-wd">
+                                Agregar
+                            </a>
+                            <br><br>
+
+                            <p *ngIf="list.length == 0" >No existe registros</p>
+
+                            <div *ngIf="list.length > 0" >
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Recomendacion</th>
+                                            <th scope="col">Comunidad</th>
+                                            <th scope="col">Usuario</th>
+                                            <th scope="col">fecha</th>
+                                            <th scope="col">Detalle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of list">
+                                            <th scope="row">1</th>
+                                            <td>{{ item.recomendation}}</td>
+                                            <td> {{ item.Community.nameC  }} </td>
+                                            <td> {{ item.User.userName}} </td>
+                                            <td> {{ dateFormat(item.monitoringDate)}} </td>
+                                            <td> <a routerLink="/monitoring-detail/ + {{ item.id }}" class="btn btn-success btn-fill btn-wd">
+                                                Detalle
+                                            </a> </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

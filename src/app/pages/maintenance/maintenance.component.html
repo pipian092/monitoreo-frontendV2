@@ -1,0 +1,47 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Mantenimiento de Preguntas</h4>
+            <p class="category"></p>
+          </div>
+          <div class="content">
+            <div class="content">
+              <a routerLink="/create-question" class="btn btn-success btn-fill btn-wd">
+                Agregar
+              </a>
+              <br><br>
+
+              <div class="mt-5">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Descripcion</th>
+                      <th>Tipo</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of questions">
+                      <td colspan="3">{{ item.description }}</td>
+                      <td colspan="1">{{ item.type }}</td>
+                      <td colspan="1">{{ item.state ? 'ACTIVO' : 'INACTIVO' }}</td>
+                      <td colspan="1">
+                        <a routerLink="/maintenance/edite-question/+{{ item.id }}" class="btn btn-outline-success btn-fill btn-wd">
+                          Editar
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

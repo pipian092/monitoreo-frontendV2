@@ -1,0 +1,46 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Listado de Usuarios</h4>
+                    </div>
+                    <div class="content">
+
+                        <a routerLink="/new-user" class="btn btn-success btn-fill btn-wd">
+                            Agregar
+                        </a>
+                        <br><br>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Cambia Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of data">
+                                    <td colspan="1">{{ item.firstName }}</td>
+                                    <td colspan="1">{{ item.lastName }}</td>
+                                    <td colspan="1">{{ item.email }}</td>
+                                    <td colspan="1">{{ item.userName }}</td>
+                                    <td colspan="1">{{ item.active ? 'ACTIVO' : 'INACTIVO' }}</td>
+                                    <a routerLink="/user/change-status/{{ item.id }}" class="btn btn-success btn-fill btn-wd">
+                                        Modificar
+                                    </a>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
